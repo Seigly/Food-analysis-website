@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Hover Effect</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<style>
+.image-container {
+    position: relative;
+    width: 300px; /* Adjust width as per your image size */
+    margin-bottom: 20px; /* Add some space below the container */
+}
+
+.image-container img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.list-hidden {
+    position: absolute;
+    top: 100%; /* Initially position below the image */
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    padding: 10px 0;
+    margin: 0;
+    list-style-type: none;
+    text-align: center; /* Center align the list items */
+    opacity: 0; /* Initially hide the list */
+    transition: opacity 0.3s ease, top 0.3s ease; /* Smooth transition for opacity and top position */
+}
+
+.image-container:hover .list-hidden {
+    top: calc(100% + 10px); /* Show the list below the image */
+    opacity: 1; /* Fade in the list on hover */
+}
+
+.list-hidden li {
+    padding: 10px 0;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+.list-hidden li:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Lighten background on hover */
+}
+
+</style>
+<body>
+
+<div class="image-container">
+    <img src="spa.jpg" alt="Hover Image">
+    <ul class="list-hidden">
+        <li>List Item 1</li>
+        <li>List Item 2</li>
+        <li>List Item 1</li>
+        <li>List Item 2</li>
+        <li>List Item 1</li>
+        <li>List Item 2</li>
+        <li>List Item 1</li>
+        <li>List Item 2</li>
+        <li>List Item 1</li>
+        <li>List Item 2</li>
+    </ul>
+</div>
+
+</body>
+</html>

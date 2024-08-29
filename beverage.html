@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Slider</title>
+    <link rel="stylesheet" href="bev.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css">
+<link rel="stylesheet"href="lastcss.css">
+</head>
+<body>
+    <header>
+        <div class="deal-banner">
+            <form action="lastpage.php" method="post">
+                <div class="search-box">
+                    <h1>HELLO!!!!</h1>
+                    <p>What are you buying today?</p>
+                    <input type="text" placeholder="Enter the product name" id="search" autocomplete="off" name="search">
+                    <button name="sub">Analyze</button>
+                </div>
+                </form>
+               
+              
+              <div class="col-md-5" style="position: relative;margin-top: -38px;margin-left: 215px;">
+                <div class="list-group" id="show-list" style="color: black;">
+                  <!-- Here autocomplete list will be display -->
+                </div>
+              </div>
+            
+            
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script src="script.js"></script>
+        </div>
+    </header>
+
+
+
+    <div class="carousel-container">
+
+        <div class="carousel">
+            <input type="radio" name="carousel" id="slide1" checked>
+            <input type="radio" name="carousel" id="slide2">
+            <input type="radio" name="carousel" id="slide3">
+
+            <div class="slides">
+                <div class="slide">
+                    <div class="product">
+                        <img src="coke.jpg" alt="coke">
+                        <h3 id="search1" style="color: black;">coca cola</h3>
+<button id="submitBtn">Analyze</button>
+
+<form id="hiddenForm" action="ajax2.php" method="post" style="display: none;">
+    <input type="hidden" name="search" id="searchInput">
+</form>
+                    </div>
+                    <div class="product">
+                        <img src="fcoffee.webp" alt="coffee">
+                        <button>Analyze</button>
+                    </div>
+                    <div class="product">
+                        <img src="tea.jpg" alt="tea">
+                        <button>Analyze</button>
+                    </div>
+                    <div class="product">
+                        <img src="boba.webp" alt="boba">
+                        <button>Analyze</button>
+                    </div>
+                    <div class="product">
+                        <img src="juice.jpg" alt="juice">
+                        <button>Analyze</button>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <!-- Add second set of products here if needed -->
+                </div>
+
+                <div class="slide">
+                    <!-- Add third set of products here if needed -->
+                </div>
+            </div>
+
+            <div class="controls">
+                <label for="slide1"></label>
+                <label for="slide2"></label>
+                <label for="slide3"></label>
+            </div>
+
+            <div class="arrows">
+                <label for="slide1" class="prev">&lt;</label>
+                <label for="slide2" class="next">&gt;</label>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    document.getElementById('submitBtn').addEventListener('click', function() {
+        var h1Text = document.getElementById('search1').innerText;
+        document.getElementById('searchInput').value = h1Text;
+        document.getElementById('hiddenForm').submit();
+    });
+    </script>
+</html>

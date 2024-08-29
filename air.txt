@@ -1,0 +1,39 @@
+    document.getElementById("").addEventListener("click", function() {
+        var xhr = new XMLHttpRequest();
+        var button = document.getElementById("loginButton");
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                    button.innerHTML = xhr.responseText; // Update button text based on server response
+                } else {
+                    console.error('There was a problem with the request.');
+                }
+            }
+        };
+        xhr.open('POST', 'toggle_login.php', true);
+        xhr.send();
+    });
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+    const showPopupBtn = document.querySelector(".login-btn");
+    const headingButton = document.getElementById("heading");
+
+    // Check if session is set
+    if (<?php echo isset($_SESSION['email']) ? 'true' : 'false'; ?>) {
+        headingButton.textContent = "LOGOUT"; // Change button text to "Logout"
+    }
+
+    showPopupBtn.addEventListener("click", () => {
+        document.body.classList.toggle("show-popup");
+        // Toggle between Login and Logout text
+        if (headingButton.textContent === "LOG IN" && <?php echo isset($_SESSION['email']) ? 'true' : 'false'; ?>) {
+            headingButton.textContent = "LOGOUT";
+        } else {
+            headingButton.textContent = "LOG IN";
+        }
+    });
+
+    // Function to log out (unset session)
+
+});

@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login/Logout Button Toggle</title>
+<style>
+    /* Optional: Basic styling for the button */
+    .login-button {
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+
+<button id="loginButton" class="login-button">Login</button>
+
+<script>
+    document.getElementById("loginButton").addEventListener("click", function() {
+        var xhr = new XMLHttpRequest();
+        var button = document.getElementById("loginButton");
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                    button.innerHTML = xhr.responseText; // Update button text based on server response
+                } else {
+                    console.error('There was a problem with the request.');
+                }
+            }
+        };
+        xhr.open('POST', 'demo1.php', true);
+        xhr.send();
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Search</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="lastcss.css">
+    <style>
+        /* Additional styles for theme switching */
+        body {
+            transition: background-color 0.5s ease;
+        }
+        .dark-theme {
+            background-color: black;
+            color: white;
+        }
+        .light-theme {
+            background-color: white;
+            color: black;
+        }
+    </style>
+</head>
+<body class="dark-theme">
+
+<header>
+    <div class="logo">proven</div>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Product Analysis</a></li>
+            <li><a href="#">Food Analysis</a></li>
+            <li><a href="#">Query</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="vlog-btn"><a href="#" onclick="toggleTheme()">Theme</a></div>
+</header>
+
+<section class="hero">
+    <h1>HELLO!!!!</h1>
+    <p>What are you eating today?</p>
+</section>
+
+<form action="lastpage.php" method="post" class="p-3">
+    <div class="search-box" style="margin-left: 300px;">
+        <input type="text" placeholder="Enter the product name" id="search" autocomplete="off" name="search">
+        <button name="sub">Analyze</button>
+    </div>
+</form>
+
+<div class="col-md-5" style="position: relative;margin-top: -38px;margin-left: 300px;color: black;">
+    <div class="list-group" id="show-list">
+        <!-- Here autocomplete list will be display -->
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="script.js"></script>
+
+<section class="food-gallery">
+    <div class="food-item">
+        <img src="south.jpg" alt="SOUTH INDIAN">
+        <div class="overlay">
+            <div class="text"><a href="south.html">SOUTH INDIAN</a></div>
+        </div>
+    </div>
+    <div class="food-item">
+        <img src="korean.webp" alt="KOREAN">
+        <div class="overlay">
+            <div class="text">KOREAN</div>
+        </div>
+    </div>
+    <div class="food-item">
+        <img src="japan.webp" alt="JAPANESE">
+        <div class="overlay">
+            <div class="text">JAPANESE</div>
+        </div>
+    </div>
+    <div class="food-item">
+        <img src="north.jpg" alt="NORTH INDIAN">
+        <div class="overlay">
+            <div class="text">NORTH INDIAN</div>
+        </div>
+    </div>
+    <div class="food-item">
+        <img src="chinese.jpg" alt="CHINESE">
+        <div class="overlay">
+            <div class="text">CHINESE</div>
+        </div>
+    </div>
+    <div class="food-item">
+        <img src="italian.jpg" alt="ITALIAN">
+        <div class="overlay">
+            <div class="text">ITALIAN</div>
+        </div>
+    </div>
+</section>
+
+<script>
+// Function to toggle between dark and light themes
+function toggleTheme() {
+    const body = document.body;
+    if (body.classList.contains('dark-theme')) {
+        body.classList.remove('dark-theme');
+        body.classList.add('light-theme');
+        // Set a cookie to remember the theme preference
+        document.cookie = "theme=light; expires=Fri, 31 Dec 9999 23:59:59 GMT";
+    } else {
+        body.classList.remove('light-theme');
+        body.classList.add('dark-theme');
+        // Set a cookie to remember the theme preference
+        document.cookie = "theme=dark; expires=Fri, 31 Dec 9999 23:59:59 GMT";
+    }
+}
+
+// Function to check and apply stored theme preference from cookie
+function checkTheme() {
+    const theme = getCookie("theme");
+    if (theme === "light") {
+        document.body.classList.remove('dark-theme');
+        document.body.classList.add('light-theme');
+    } else {
+        document.body.classList.remove('light-theme');
+        document.body.classList.add('dark-theme');
+    }
+}
+
+// Function to get cookie value by name
+function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+}
+
+// Check and apply theme on page load
+checkTheme();
+</script>
+
+</body>
+</html>
+

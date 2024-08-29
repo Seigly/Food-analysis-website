@@ -1,0 +1,222 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+}
+
+header .deal-banner {
+    background: url('beverage.png') no-repeat center center/cover;
+    background-color: #ff9f00;
+    color: white;
+    text-align: center;
+    padding: 50px 70;
+}
+
+header .deal-banner h2 {
+    margin: 0;
+    font-size: 2em;
+}
+
+header .deal-banner p {
+    margin: 10px 0;
+    font-size: 1.2em;
+}
+
+header .deal-banner button {
+    background-color: white;
+    color: #ff9f00;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+header .deal-banner button:hover {
+    background-color: #ffe4b2;
+}
+
+.search-bar {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.search-bar select,
+.search-bar input {
+    padding: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.search-bar button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff5722;
+    color: #fff;
+    cursor: pointer;
+}
+
+.brands {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.brands img {
+    max-width: 100px;
+    margin: 0 10px;
+}
+
+.carousel-container {
+    max-width: auto;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    padding: 70px;
+
+}
+
+.carousel-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.category-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.category-tabs button {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.category-tabs button.active,
+.category-tabs button:hover {
+    background-color: #ff9f00;
+    color: white;
+}
+
+.carousel {
+    position: relative;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.product {
+    background-color: #fff;
+    padding: 20px;
+    margin: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+    width: 180px;
+}
+
+.product img {
+    max-width: 100%;
+    height: auto;
+}
+
+.product p {
+    margin: 10px 0;
+}
+
+.product .old-price {
+    text-decoration: line-through;
+    color: #888;
+}
+
+button {
+    background-color: #ff9f00;
+    border: none;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #e68a00;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"]:nth-of-type(1):checked ~ .slides {
+    transform: translateX(0%);
+}
+
+input[type="radio"]:nth-of-type(2):checked ~ .slides {
+    transform: translateX(-100%);
+}
+
+input[type="radio"]:nth-of-type(3):checked ~ .slides {
+    transform: translateX(-200%);
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.controls label {
+    background-color: #ddd;
+    border: none;
+    padding: 5px 10px;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.controls label:hover {
+    background-color: #bbb;
+}
+
+.arrows {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.arrows label {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.arrows label:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.arrows .prev {
+    left: 10px;
+}
+
+.arrows .next {
+    right: 10px;
+}

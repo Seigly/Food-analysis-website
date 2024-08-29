@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Send H1 Text to PHP</title>
+</head>
+<body>
+
+<h1 id="search" style="color: black;">coca cola</h1>
+<button id="submitBtn">Analyze</button>
+
+<form id="hiddenForm" action="ajax2.php" method="post" style="display: none;">
+    <input type="hidden" name="search" id="searchInput">
+</form>
+
+<script>
+document.getElementById('submitBtn').addEventListener('click', function() {
+    var h1Text = document.getElementById('search').innerText;
+    document.getElementById('searchInput').value = h1Text;
+    document.getElementById('hiddenForm').submit();
+});
+</script>
+
+</body>
+</html>
+
