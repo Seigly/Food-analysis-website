@@ -1,0 +1,185 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    
+    padding: 20px;
+    justify-content: center;
+   background-color: black;
+}
+.container {
+    width: 80%;
+    max-width: 1200px;
+    text-align: center;
+}
+header {
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+header img {
+    width: 150px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.h {
+    margin-bottom: 20px;
+}
+
+.h h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.h img {
+    width: 150px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.container {
+    width: 80%;
+    max-width: 1200px;
+    text-align: center;
+}
+
+
+.notes {
+    text-align: left;
+}
+
+.notes h2 {
+    margin-bottom: 10px;
+}
+
+.notes ul {
+    list-style: none;
+}
+
+.notes li {
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #1e1e1e;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.notes li:hover {
+    background-color: #333;
+}
+
+.theme-button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.search-box {
+    margin-bottom: 20px;
+}
+
+.search-box input {
+    padding: 10px;
+    width: 60%;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.search-box button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff6347;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-box button:hover {
+    background-color: #e55337;
+}
+
+.product-table {
+    width: 100%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    color: white;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.product-table th,
+.product-table td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.product-table th {
+    background-color: #333;
+}
+
+.product-table tbody tr:hover {
+    background-color: #444;
+}
+
+.meter {
+    width: 100%;
+    height: 20px;
+    background-color: #333;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.meter .bar {
+    width: 50%;
+    height: 100%;
+    background-color: #ff6347;
+    transition: width 0.5s;
+}
+
+.percentage-line {
+display: flex;
+justify-content: space-between;
+margin-top: 10px;
+font-size: 0.9rem;
+color: #ccc;
+}
+
+.percentage-line span {
+width: 20%;
+text-align: center;
+position: relative;
+}
+
+.percentage-line span::before {
+content: '';
+position: absolute;
+top: -10px;
+left: 50%;
+transform: translateX(-50%);
+width: 1px;
+height: 10px;
+background-color: #ccc;
+}

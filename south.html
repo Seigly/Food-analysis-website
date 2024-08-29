@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Slider</title>
+    <link rel="stylesheet" href="south.css">
+</head>
+<body>
+    <header>
+        <div class="deal-banner">
+            <h2>Hello!!!!!</h2>
+            <p>What are you eating today?</p>
+        </div>
+    </header>
+
+    <div class="search-bar">
+        <input type="text" placeholder="Enter food name">
+        <button>Search</button>
+    </div>
+
+
+    <div class="carousel-container">
+
+        <div class="carousel">
+            <input type="radio" name="carousel" id="slide1" checked>
+            <input type="radio" name="carousel" id="slide2">
+            <input type="radio" name="carousel" id="slide3">
+
+            <div class="slides">
+                <div class="slide">
+                    <div class="product">
+                        <img src="idly.avif" alt="idly">
+                        <button>Analyze</button>
+                    </div>
+                    <div class="product">
+                        <img src="dosa.webp" alt="dosa">
+                        <button>Analyze</button>
+                    </div>
+                    <div class="product">
+                        <img src="sambar.webp" alt="sambar">
+                        <button>Analyze</button>
+                    </div>
+                    <div class="product">
+                        <img src="uthappam.png" alt="uthappam">
+                        <button>Analyze</button>
+                    </div>
+                    <div class="product">
+                        <img src="puttu.webp" alt="puttu">
+                        <button>Analyze</button>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="product">
+                        <img src="puttu.webp" alt="puttu">
+                        <button>Analyze</button>
+                    </div>
+                    <!-- Add second set of products here if needed -->
+                </div>
+
+                <div class="slide">
+                    <div class="product">
+                        <img src="puttu.webp" alt="puttu">
+                        <button>Analyze</button>
+                    </div>
+                    <!-- Add third set of products here if needed -->
+                </div>
+            </div>
+
+            <div class="controls">
+                <label for="slide1"></label>
+                <label for="slide2"></label>
+                <label for="slide3"></label>
+            </div>
+
+            <div class="arrows">
+                <label for="slide1" class="prev">&lt;</label>
+                <label for="slide2" class="next">&gt;</label>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit a Review</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .review {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Submit a Review</h1>
+    <textarea id="reviewInput" placeholder="Write your review..."></textarea><br>
+    <button onclick="sendReview()">Send</button>
+
+    <script>
+        const socket = new WebSocket('ws://localhost:8080');
+
+        socket.addEventListener('open', () => {
+            console.log('Connected to the WebSocket server');
+        });
+
+        function sendReview() {
+            const reviewInput = document.getElementById('reviewInput');
+            const review = reviewInput.value;
+
+            if (review) {
+                socket.send(review);
+                reviewInput.value = '';
+            }
+        }
+    </script>
+
+
+</body>
+</html>

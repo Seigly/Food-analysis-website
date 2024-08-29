@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fancy Animated Table Example</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    /* Reset some default styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Basic styling for the table */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.animated-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 1.1em;  /* Increased font size for better readability */
+    font-family: Arial, sans-serif;
+}
+
+.animated-table th {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+    padding: 15px;  /* Increased padding */
+    border: 1px solid #ddd;
+    font-weight: bold;
+}
+
+.animated-table td {
+    padding: 15px;  /* Increased padding */
+    border: 1px solid #ddd;
+}
+
+.animated-table tbody tr:nth-of-type(even) {
+    background-color: #f9f9f9;  /* Lighter background color for even rows */
+}
+
+.animated-table tbody tr:hover {
+    background-color: #f2f2f2;  /* Slightly darker hover background */
+}
+
+/* Animation for table rows */
+.animated-row {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.animated-row.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Fancy styles */
+.fancy-table {
+    border: 2px solid #009879;  /* Add a border around the table */
+    border-radius: 8px;  /* Rounded corners for the table */
+    overflow: hidden;  /* Ensure border radius works properly */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  /* Soft shadow for depth */
+}
+
+</style>
+<body>
+
+<div class="container">
+    <table class="animated-table fancy-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="animated-row">
+                <td>1</td>
+                <td>John Doe</td>
+                <td>john.doe@example.com</td>
+                <td>30</td>
+            </tr>
+            <tr class="animated-row">
+                <td>2</td>
+                <td>Jane Smith</td>
+                <td>jane.smith@example.com</td>
+                <td>25</td>
+            </tr>
+            <tr class="animated-row">
+                <td>3</td>
+                <td>Michael Johnson</td>
+                <td>michael.johnson@example.com</td>
+                <td>40</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<script>document.addEventListener("DOMContentLoaded", function() {
+    // Trigger animation when the table is in view
+    const rows = document.querySelectorAll('.animated-row');
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animated');
+            }
+        });
+    });
+
+    rows.forEach(row => {
+        observer.observe(row);
+    });
+});
+</script>
+</body>
+</html>
+
